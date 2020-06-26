@@ -1,0 +1,47 @@
+:root {
+    /* colors */
+    --main-text-color: #162700;
+    --gray-text-color: #f9f9f9;
+    --green-bg: #427f09;
+    --dark-green-bg: #1a3d04;
+    --main-content-bg: #f2fdf3;
+
+    /* other */
+    --top-box-horiz-padding: 10px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family:  Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: var(--main-text-color);
+}
+
+.app-wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    color: var(--gray-text-color);
+    background-color: var(--green-bg);
+    padding: 20px var(--top-box-horiz-padding);
+}
+
+.main-content  {
+    background-color: var(--main-content-bg);
+    padding: 40px var(--top-box-horiz-padding);
+}
+
+.footer {
+    color: var(--gray-text-color);
+    background-color: var(--dark-green-bg);
+    padding: 40px var(--top-box-horiz-padding);
+    padding-bottom: 20px;
+}

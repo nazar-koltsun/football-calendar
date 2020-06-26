@@ -3,7 +3,16 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-wrapper">
+      <header className="header">
+        Header
+      </header>
+      <main className="main-content">
+        Main Content
+      </main>
+      <footer className="footer">
+        Footer
+      </footer>
     </div>
   );
 }
