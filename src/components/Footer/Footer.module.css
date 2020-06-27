@@ -1,0 +1,6 @@
+.footer {
+    color: var(--gray-text-color);
+    background-color: var(--dark-green-bg);
+    padding: 40px var(--top-box-horiz-padding);
+    padding-bottom: 20px;
+}

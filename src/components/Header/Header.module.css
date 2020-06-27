@@ -1,0 +1,5 @@
+.header {
+    color: var(--gray-text-color);
+    background-color: var(--green-bg);
+    padding: 20px var(--top-box-horiz-padding);
+}

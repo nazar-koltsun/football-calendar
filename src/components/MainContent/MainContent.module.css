@@ -1,0 +1,4 @@
+.mainContent  {
+    background-color: var(--main-content-bg);
+    padding: 40px var(--top-box-horiz-padding);
+}
