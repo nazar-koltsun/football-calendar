@@ -1,8 +1,13 @@
 import React from "react";
 import classes from "./Header.module.css";
+import Logo from "../../assets/img/logo.svg";
 
 function Header() {
-    return <header className={classes.header}>Header</header>;
+    return (
+        <header className={classes.header}>
+            <img src={Logo} width="61" height="61" alt="Logo"/>
+        </header>
+    )
 }
 
 export default Header;
