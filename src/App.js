@@ -9,8 +9,7 @@ function App() {
         <div className="app-wrapper">
             <Header />
             <main className="app-content">
-                Main Content
-                <Route path="/matches" render={() => <div><h1>Matches</h1></div>} />
+                <Route path="/" render={() => <div><h1>Matches</h1></div>} />
             </main>
             <Footer />
         </div>
