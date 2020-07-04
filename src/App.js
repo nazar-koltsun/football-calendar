@@ -10,7 +10,8 @@ function App() {
             <Header />
             <main className="app-content">
                 Main Content
-            </main>;
+                <Route path="/matches" render={() => <div><h1>Matches</h1></div>} />
+            </main>
             <Footer />
         </div>
     );
