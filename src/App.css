@@ -32,3 +32,8 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
+
+.app-content  {
+    background-color: var(--main-content-bg);
+    padding: 40px var(--top-box-horiz-padding);
+}
