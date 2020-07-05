@@ -9,7 +9,8 @@ function App() {
         <div className="app-wrapper">
             <Header />
             <main className="app-content">
-                <Route path="/" render={() => <div><h1>Matches</h1></div>} />
+                <h1 className="app-title">Football calendar</h1>
+                <Route path="/" render={() => <div><h2>Matches</h2></div>} />
             </main>
             <Footer />
         </div>

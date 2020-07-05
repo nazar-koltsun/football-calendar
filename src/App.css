@@ -8,6 +8,7 @@
 
     /* other */
     --top-box-horiz-padding: 10px;
+    --container-max-width: 1200px;
 }
 
 html {
@@ -37,4 +38,12 @@ body {
 .app-content  {
     background-color: var(--main-content-bg);
     padding: 40px var(--top-box-horiz-padding);
+}
+
+.app-title {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
 }
