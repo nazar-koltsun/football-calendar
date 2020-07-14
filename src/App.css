@@ -20,6 +20,10 @@ img {
     max-width: 100%;
 }
 
+.show {
+    display: block;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
