@@ -3,9 +3,8 @@ import classes from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 
 function Nav(props) {
-    console.log(props);
     const showLIst = props.navigation.isNavOpen ? "show" : "";
-    const activeLinkClassName = 'active link';
+
     return (
         <nav className={classes.nav}>
             {props.navigation.isNavOpen ? (
