@@ -2,6 +2,6 @@
     display: flex;
     justify-content: space-between;
     color: var(--gray-text-color);
-    background-color: var(--green-bg);
+    background-color: var(--green);
     padding: 20px var(--top-box-horiz-padding);
 }

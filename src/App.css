@@ -2,9 +2,9 @@
     /* colors */
     --main-text-color: #162700;
     --gray-text-color: #f9f9f9;
-    --green-bg: #427f09;
-    --dark-green-bg: #1a3d04;
-    --main-content-bg: #f2fdf3;
+    --green: #427f09;
+    --dark-green: #1a3d04;
+    --light-green: #f2fdf3;
 
     /* other */
     --top-box-horiz-padding: 10px;
@@ -40,7 +40,7 @@ body {
 }
 
 .app-content  {
-    background-color: var(--main-content-bg);
+    background-color: var(--light-green);
     padding: 40px var(--top-box-horiz-padding);
 }
 

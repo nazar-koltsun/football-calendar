@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 function Nav(props) {
     console.log(props);
     const showLIst = props.navigation.isNavOpen ? "show" : "";
+    const activeLinkClassName = 'active link';
     return (
         <nav className={classes.nav}>
             {props.navigation.isNavOpen ? (
@@ -24,7 +25,7 @@ function Nav(props) {
             )}
             <ul className={`${showLIst} ${classes.list}`}>
                 <li className={classes.item}>
-                    <NavLink to="/" activeClassName={classes.active}>
+                    <NavLink to="/" className={classes.link} activeClassName={classes.activeLink}>
                         Matches
                     </NavLink>
                 </li>
