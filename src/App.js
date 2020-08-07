@@ -2,6 +2,7 @@ import React from "react";
 import {Route} from 'react-router-dom';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import MatchesContainer from "./components/Matches/MatchesContainer"
 import "./App.css";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
             <Header />
             <main className="app-content">
                 <h1 className="app-title">Football calendar</h1>
-                <Route path="/" render={() => <div><h2>Matches</h2></div>} />
+                <Route path="/" render={() => <MatchesContainer />} />
             </main>
             <Footer />
         </div>
