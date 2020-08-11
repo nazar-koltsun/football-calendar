@@ -28,7 +28,7 @@ class MatchesContainer extends React.Component {
     }
     
     render() {
-        return <Matches />
+        return <Matches events={this.props.premierLeagueEvents} />
     }
 }
 
