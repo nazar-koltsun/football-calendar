@@ -1,9 +1,21 @@
 import React from "react";
 import classes from "./Matches.module.css";
-import { Link } from "react-router-dom";
 
 function Matches(props) {
     console.log(props);
+
+    let detectWinnerForHomeTeam = (match) => {
+        if (match.goalsHomeTeam > match.goalsAwayTeam) {
+            return classes.winner;
+        }
+    };
+
+    let detectWinnerForAwayTeam = (match) => {
+        if (match.goalsAwayTeam > match.goalsHomeTeam) {
+            return classes.winner;
+        }
+    };
+
     return (
         <article>
             <h2 className="page-title">Matches</h2>
@@ -20,35 +32,53 @@ function Matches(props) {
                                     className={[
                                         classes.teamBlock,
                                         classes.teamBlockLeft,
-                                    ].join(' ')}
+                                    ].join(" ")}
                                 >
-                                    <strong className={classes.teamName}>
+                                    <strong
+                                        className={[
+                                            classes.teamName,
+                                            classes.homeTeam,
+                                        ].join(" ")}
+                                    >
                                         {item.homeTeam.team_name}
                                     </strong>
                                     <img
                                         className={classes.teamLogo}
                                         src={item.homeTeam.logo}
-                                        width="30"
-                                        height="30"
+                                        width="25"
+                                        height="25"
                                         loading="lazy"
                                         alt={`${item.homeTeam.team_name} logo`}
                                     />
                                 </div>
-                                <d className={classes.result}>
-                                    <span className={classes.goals}>1</span>
-                                    <span className={classes.resultLine}>-</span>
-                                    <span className={classes.goals}>4</span>
-                                </d>
+                                <div className={classes.result}>
+                                    <span
+                                        className={detectWinnerForHomeTeam(item)}
+                                    >
+                                        {item.goalsHomeTeam}
+                                    </span>
+                                    <span className={classes.resultLine}>
+                                        -
+                                    </span>
+                                    <span className={detectWinnerForAwayTeam(item)}>
+                                        {item.goalsAwayTeam}
+                                    </span>
+                                </div>
                                 <div className={classes.teamBlock}>
                                     <img
                                         className={classes.teamLogo}
                                         src={item.awayTeam.logo}
-                                        width="30"
-                                        height="30"
+                                        width="25"
+                                        height="25"
                                         loading="lazy"
                                         alt={`${item.awayTeam.team_name} logo`}
                                     />
-                                    <strong className={classes.teamName}>
+                                    <strong
+                                        className={[
+                                            classes.teamName,
+                                            classes.awayTeam,
+                                        ].join(" ")}
+                                    >
                                         {item.awayTeam.team_name}
                                     </strong>
                                 </div>

@@ -38,3 +38,24 @@
     font-size: 1.4rem;
     font-weight: 400;
 }
+
+.homeTeam {
+    margin-right: 3px;
+}
+
+.awayTeam {
+    margin-left: 3px;
+}
+
+.result {
+    flex-shrink: 0;
+    margin: 0 5px;
+}
+
+.resultLine {
+    margin: 0 5px;
+}
+
+.winner {
+    font-weight: 700;
+}
