@@ -21,9 +21,7 @@ class MatchesContainer extends React.Component {
         axios.get("https://api-football-v1.p.rapidapi.com/v2/fixtures/league/524/last/10", {headers: headers}
         
         ).then((response) => {
-            console.log(response.data.api);
             this.props.setPremierLeagueEvents(response.data.api.fixtures);
-            console.log(this.props);
         });
     }
     
