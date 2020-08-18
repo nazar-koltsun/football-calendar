@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Matches from "./Matches";
-import {setPremierLeagueEvents} from "../Redux/matches-reducer";
-import { matchesApi } from "../../api/api";
+import {getLastMatchesData} from "../Redux/matches-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -12,9 +11,7 @@ let mapStateToProps = (state) => {
 
 class MatchesContainer extends React.Component {
     componentDidMount() {
-        matchesApi.getLastMatches().then((response) => {
-            this.props.setPremierLeagueEvents(response.data.api.fixtures);
-        });
+        this.props.getLastMatchesData();
     }
     
     render() {
@@ -22,4 +19,4 @@ class MatchesContainer extends React.Component {
     }
 }
 
-export default connect(mapStateToProps, {setPremierLeagueEvents})(MatchesContainer);
+export default connect(mapStateToProps, {getLastMatchesData})(MatchesContainer);
