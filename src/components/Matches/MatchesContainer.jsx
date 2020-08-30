@@ -13,13 +13,13 @@ let mapStateToProps = (state) => {
 
 class MatchesContainer extends React.Component {
     componentDidMount() {
-        this.props.getLastMatchesData(this.state.filteredEventsCount);
+        this.props.getLastMatchesData(this.props.filteredEventsCount);
     }
     
     render() {
         return <Matches 
                     events={this.props.premierLeagueEvents} 
-                    filteredEventsCount={this.state.filteredEventsCount}
+                    filteredEventsCount={this.props.filteredEventsCount}
                     setFilteredEventsCount={this.props.setFilteredEventsCount} 
                 />
     }
