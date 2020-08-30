@@ -10,7 +10,7 @@ const instance = axios.create({
 });
 
 export const matchesApi = {
-    getLastMatches(numberOfMatches = 10) {
-        return instance.get(`league/524/last/${numberOfMatches}`);
+    getLastMatches(numberOfMatches) {
+        return instance.get(`league/524/${numberOfMatches}`);
     }
 }

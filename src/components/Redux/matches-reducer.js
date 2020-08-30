@@ -1,9 +1,11 @@
 import { matchesApi } from "../../api/api";
 
 const SET_PREMIER_LEAGUE_EVENTS = "SET_PREMIER_LEAGUE_EVENTS";
+const SET_FILTERED_EVENTS_COUNT = "SET_FILTERED_EVENTS_COUNT";
 
 let initState = {
-    premierLeagueEvents: []
+    premierLeagueEvents: [],
+    filteredEventsCount: "last/5"
 };
 
 const matchesReducer = (state = initState, action) => {
@@ -12,6 +14,13 @@ const matchesReducer = (state = initState, action) => {
             return {
                 ...state,
                 premierLeagueEvents: [...action.premierLeagueEvents]
+            }
+        }
+
+        case SET_FILTERED_EVENTS_COUNT: {
+            return {
+                ...state,
+                filteredEventsCount: action.eventsCount
             }
         }
 
@@ -25,13 +34,17 @@ export const setPremierLeagueEvents = (premierLeagueEvents) => ({
     premierLeagueEvents
 });
 
-export const getLastMatchesData = () => {
+export const setFilteredEventsCount = (eventsCount)  => ({
+    type: SET_FILTERED_EVENTS_COUNT,
+    eventsCount
+});
+
+export const getLastMatchesData = (filteredEventsCount) => {
     return (dispatch) => {
-        matchesApi.getLastMatches().then((response) => {
+        matchesApi.getLastMatches(filteredEventsCount).then((response) => {
             dispatch(setPremierLeagueEvents(response.data.api.fixtures));
         });
     }
 }
-
 
 export default matchesReducer;
