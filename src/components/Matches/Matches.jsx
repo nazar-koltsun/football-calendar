@@ -13,10 +13,13 @@ function Matches(props) {
             <section className={classes.matchesItem}>
                 <h3 className={classes.title}>PREMIER LEAGUE</h3>
                 <div className={classes.filter}>
-                    <select defaultValue={props.filteredEventsCount} onChange={tess} >
+                    <select className={classes.filterSelect} defaultValue={props.filteredEventsCount} onChange={tess} >
                         <option value="last/5">Last 5</option>
                         <option value="last/10">Last 10</option>
                         <option value="last/15">Last 15</option>
+                        <option value="next/5">Next 5</option>
+                        <option value="next/10">Next 10</option>
+                        <option value="next/15">Next 15</option>
                     </select>
                 </div>
                 <ul className={classes.matchesList}>

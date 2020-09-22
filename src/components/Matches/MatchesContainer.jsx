@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Matches from "./Matches";
-import {getLastMatchesData, setFilteredEventsCount} from "../Redux/matches-reducer";
+import {getMatchesData, setFilteredEventsCount} from "../Redux/matches-reducer";
 
 let mapStateToProps = (state) => {
     return {
@@ -13,16 +13,24 @@ let mapStateToProps = (state) => {
 
 class MatchesContainer extends React.Component {
     componentDidMount() {
-        this.props.getLastMatchesData(this.props.filteredEventsCount);
+        this.props.getMatchesData(this.props.filteredEventsCount);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.filteredEventsCount !== this.props.filteredEventsCount) {
+            this.props.getMatchesData(this.props.filteredEventsCount);
+        }
     }
     
     render() {
-        return <Matches 
-                    events={this.props.premierLeagueEvents} 
-                    filteredEventsCount={this.props.filteredEventsCount}
-                    setFilteredEventsCount={this.props.setFilteredEventsCount} 
-                />
+        return (
+            <Matches 
+                events={this.props.premierLeagueEvents} 
+                filteredEventsCount={this.props.filteredEventsCount}
+                setFilteredEventsCount={this.props.setFilteredEventsCount} 
+            />
+        )
     }
 }
 
-export default connect(mapStateToProps, {getLastMatchesData, setFilteredEventsCount})(MatchesContainer);
+export default connect(mapStateToProps, {getMatchesData, setFilteredEventsCount})(MatchesContainer);

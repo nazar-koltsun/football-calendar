@@ -39,9 +39,9 @@ export const setFilteredEventsCount = (eventsCount)  => ({
     eventsCount
 });
 
-export const getLastMatchesData = (filteredEventsCount) => {
+export const getMatchesData = (filteredEventsCount) => {
     return (dispatch) => {
-        matchesApi.getLastMatches(filteredEventsCount).then((response) => {
+        matchesApi.getMatches(filteredEventsCount).then((response) => {
             dispatch(setPremierLeagueEvents(response.data.api.fixtures));
         });
     }
