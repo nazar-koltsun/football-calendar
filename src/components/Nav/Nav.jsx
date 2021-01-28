@@ -3,11 +3,11 @@ import classes from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 
 function Nav(props) {
-    const showLIst = props.navigation.isNavOpen ? "show" : "";
-
+    const showLIst = props.isNavOpen ? "show" : "";
+    console.log(props);
     return (
         <nav className={classes.nav}>
-            {props.navigation.isNavOpen ? (
+            {props.isNavOpen ? (
                 <button
                     className={classes.closeNav}
                     aria-label="Close main navigation"
