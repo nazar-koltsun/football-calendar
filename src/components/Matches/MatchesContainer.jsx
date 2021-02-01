@@ -2,14 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import Matches from "./Matches";
 import Loader from "../common/Loader";
+import { 
+    getPremierLeagueEvents, 
+    getFilteredEventsCount,
+    getIsFetching
+} from "../Redux/matches-selectors";
 import {getMatchesData, setFilteredEventsCount} from "../Redux/matches-reducer";
 
 let mapStateToProps = (state) => {
     return {
-        premierLeagueEvents: state.matchesPage.premierLeagueEvents,
-        filteredEventsCount: state.matchesPage.filteredEventsCount,
-        setFilteredEventsCount: state.matchesPage.setFilteredEventsCount,
-        isFetching: state.matchesPage.isFetching
+        premierLeagueEvents: getPremierLeagueEvents(state),
+        filteredEventsCount: getFilteredEventsCount(state),
+        isFetching: getIsFetching(state)
     }
 }
 
