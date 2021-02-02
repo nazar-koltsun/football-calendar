@@ -1,15 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./components/Redux/redux-store";
-import App from "./App";
+import FootballCalendarApp from "./App";
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </BrowserRouter>,
+    <FootballCalendarApp />,
     document.getElementById("root")
 );

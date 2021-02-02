@@ -1,5 +1,7 @@
 import React from "react";
-import {Route} from 'react-router-dom';
+import {Route, BrowserRouter} from 'react-router-dom';
+import { Provider } from "react-redux";
+import store from "./components/Redux/redux-store";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import MatchesContainer from "./components/Matches/MatchesContainer"
@@ -18,4 +20,14 @@ function App() {
     );
 }
 
-export default App;
+const FootballCalendarApp = (props) => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>
+    ) 
+};
+
+export default FootballCalendarApp;
