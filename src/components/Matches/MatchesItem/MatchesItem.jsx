@@ -1,5 +1,5 @@
-import React from "react";
-import classes from "./MatchesItem.module.css";
+import React from 'react';
+import classes from './MatchesItem.module.css';
 
 function MatchesItem(props) {
     let detectWinnerForHomeTeam = (match) => {
@@ -16,16 +16,20 @@ function MatchesItem(props) {
 
     return (
         <li className={classes.matchesListItem}>
-            <div className={[classes.teamBlock, classes.teamBlockLeft].join(" ")}>
-                <strong className={[classes.teamName, classes.homeTeam].join(" ")}>
+            <div
+                className={[classes.teamBlock, classes.teamBlockLeft].join(' ')}
+            >
+                <strong
+                    className={[classes.teamName, classes.homeTeam].join(' ')}
+                >
                     {props.homeTeam.team_name}
                 </strong>
                 <img
                     className={classes.teamLogo}
                     src={props.homeTeam.logo}
-                    width="25"
-                    height="25"
-                    loading="lazy"
+                    width='25'
+                    height='25'
+                    loading='lazy'
                     alt={`${props.homeTeam.team_name} logo`}
                 />
             </div>
@@ -42,12 +46,14 @@ function MatchesItem(props) {
                 <img
                     className={classes.teamLogo}
                     src={props.awayTeam.logo}
-                    width="25"
-                    height="25"
-                    loading="lazy"
+                    width='25'
+                    height='25'
+                    loading='lazy'
                     alt={`${props.awayTeam.team_name} logo`}
                 />
-                <strong className={[classes.teamName, classes.awayTeam].join(" ")}>
+                <strong
+                    className={[classes.teamName, classes.awayTeam].join(' ')}
+                >
                     {props.awayTeam.team_name}
                 </strong>
             </div>

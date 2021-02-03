@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
-import Nav from "./Nav";
-import { openNav, closeNav } from "../Redux/nav-reducer";
-import { getIsNavOpen } from "../Redux/nav-selectors";
+import { connect } from 'react-redux';
+import Nav from './Nav';
+import { openNav, closeNav } from '../Redux/nav-reducer';
+import { getIsNavOpen } from '../Redux/nav-selectors';
 
 let mapStateToProps = (state) => {
     return {
@@ -9,4 +9,4 @@ let mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, {openNav, closeNav})(Nav);
+export default connect(mapStateToProps, { openNav, closeNav })(Nav);

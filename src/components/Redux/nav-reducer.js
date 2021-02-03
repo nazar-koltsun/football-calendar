@@ -1,5 +1,5 @@
-const OPEN_NAV = "nav/OPEN_NAV";
-const CLOSE_NAV = "nav/CLOSE_NAV";
+const OPEN_NAV = 'nav/OPEN_NAV';
+const CLOSE_NAV = 'nav/CLOSE_NAV';
 
 let initState = {
     isNavOpen: false,
@@ -10,19 +10,19 @@ const navReducer = (state = initState, action) => {
         case OPEN_NAV:
             return {
                 ...state,
-                isNavOpen: true
+                isNavOpen: true,
             };
         case CLOSE_NAV:
             return {
                 ...state,
-                isNavOpen: false
+                isNavOpen: false,
             };
         default:
             return state;
     }
 };
 
-export const openNav = () => ({type: OPEN_NAV});
-export const closeNav = () => ({type: CLOSE_NAV});
+export const openNav = () => ({ type: OPEN_NAV });
+export const closeNav = () => ({ type: CLOSE_NAV });
 
 export default navReducer;
