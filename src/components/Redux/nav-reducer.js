@@ -1,5 +1,5 @@
-const OPEN_NAV = "OPEN_NAV";
-const CLOSE_NAV = "CLOSE_NAV";
+const OPEN_NAV = "nav/OPEN_NAV";
+const CLOSE_NAV = "nav/CLOSE_NAV";
 
 let initState = {
     isNavOpen: false,
