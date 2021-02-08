@@ -74,8 +74,9 @@
 
 .link {
     color: var(--main-text-color);
+    text-decoration: none;
 }
 
 .activeLink {
-    text-decoration: none;
+    color: var(--green);
 }

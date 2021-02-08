@@ -5,6 +5,8 @@ import store from './components/Redux/redux-store';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MatchesContainer from './components/Matches/MatchesContainer';
+import Home from './components/Home/Home';
+
 import './App.css';
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
             <Header />
             <main className='app-content'>
                 <h1 className='app-title'>Football calendar</h1>
-                <Route path='/' render={() => <MatchesContainer />} />
+                <Route exact path='/' render={() => <Home />} />
+                <Route path='/matches' render={() => <MatchesContainer />} />
             </main>
             <Footer />
         </div>

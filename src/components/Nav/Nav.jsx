@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 function Nav(props) {
     const showLIst = props.isNavOpen ? 'show' : '';
-    console.log(props);
     return (
         <nav className={classes.nav}>
             {props.isNavOpen ? (
@@ -24,8 +23,17 @@ function Nav(props) {
             )}
             <ul className={`${showLIst} ${classes.list}`}>
                 <li className={classes.item}>
-                    <NavLink
+                    <NavLink exact
                         to='/'
+                        className={classes.link}
+                        activeClassName={classes.activeLink}
+                    >
+                        Home
+                    </NavLink>
+                </li>
+                <li className={classes.item}>
+                    <NavLink
+                        to='/matches'
                         className={classes.link}
                         activeClassName={classes.activeLink}
                     >
