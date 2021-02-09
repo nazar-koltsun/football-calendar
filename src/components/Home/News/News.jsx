@@ -1,9 +1,13 @@
 import React from 'react';
 import classes from './News.module.css';
+import NewsItem from './NewsItem/NewsItem';
 
 function News(props) {
     return (
-        <p>Some hot news</p>
+        <article className={classes.News}>
+            <h2 className={classes.NewsTitle}>News</h2>
+            <NewsItem />
+        </article>
     );
 }
 

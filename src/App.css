@@ -8,6 +8,10 @@
 
     /* other */
     --top-box-horiz-padding: 10px;
+    --box-vert-space-small: 5px;
+    --box-vert-space: 15px;
+    --box-vert-space-big: 25px;
+    --section-vert-space: 50px;
     --container-max-width: 1200px;
 }
 
@@ -20,6 +24,18 @@ img {
     max-width: 100%;
 }
 
+h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
 .show {
     display: block;
 }
@@ -28,7 +44,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     font-weight: normal;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.2;
     color: var(--main-text-color);
 }

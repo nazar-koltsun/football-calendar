@@ -5,7 +5,7 @@ import store from './components/Redux/redux-store';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MatchesContainer from './components/Matches/MatchesContainer';
-import Home from './components/Home/Home';
+import Home from './components/Home/HomeContainer';
 
 import './App.css';
 
