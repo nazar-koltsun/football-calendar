@@ -1,3 +1,23 @@
-p {
-    color: red;
+.NewsItem {
+    --gap: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+    margin-bottom: var(--box-vert-space-big);
+    padding-bottom: var(--box-vert-space);
+    border-bottom: 1px solid var(--dark-green);
+}
+
+.NewsItemInfo {
+    min-width: 70%;
+}
+
+.NewsItemImg {
+    width: calc(30% - var(--gap));
+}
+
+.NewsItemDate {
+    display: block;
+    margin-top: var(--box-vert-space);
+    font-size: 1.4rem;
 }

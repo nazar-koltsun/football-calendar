@@ -9,8 +9,21 @@ const instance = axios.create({
     },
 });
 
+const instanceNews = axios.create({
+    baseURL: 'https://livescore6.p.rapidapi.com/news/list',
+    headers: {
+        'x-rapidapi-key': '31e92faf3bmsh3de0393b737b483p10774ejsnec45c47a093a',
+        'x-rapidapi-host': 'livescore6.p.rapidapi.com',
+        useQueryString: true,
+    },
+});
+
 export const matchesApi = {
     getMatches(numberOfMatches) {
         return instance.get(`league/2790/${numberOfMatches}`);
     },
+
+    getNews() {
+        return instanceNews.get();
+    }
 };

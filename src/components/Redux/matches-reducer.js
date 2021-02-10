@@ -53,14 +53,11 @@ export const toggleIsFetching = (isFetching) => ({
     isFetching,
 });
 
-export const getMatchesData = (filteredEventsCount) => {
-    return (dispatch) => {
-        dispatch(toggleIsFetching(true));
-        matchesApi.getMatches(filteredEventsCount).then((response) => {
-            dispatch(setPremierLeagueEvents(response.data.api.fixtures));
-            dispatch(toggleIsFetching(false));
-        });
-    };
+export const getMatchesData = (filteredEventsCount) => async (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    const response = await matchesApi.getMatches(filteredEventsCount);
+    dispatch(setPremierLeagueEvents(response.data.api.fixtures));
+    dispatch(toggleIsFetching(false));
 };
 
 export default matchesReducer;
