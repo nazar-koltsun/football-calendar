@@ -22,7 +22,9 @@ export const matchesApi = {
     getMatches(numberOfMatches) {
         return instance.get(`league/2790/${numberOfMatches}`);
     },
+};
 
+export const newsApi = {
     getNews() {
         return instanceNews.get();
     }
