@@ -14,11 +14,21 @@ let mapStateToProps = (state) => {
 };
 
 class HomeContainer extends React.Component {
-    componentDidMount() {
+    refreshHomePage() {
         this.props.isNavOpen && this.props.closeNav();
         this.props.getNewsData();
     }
 
+    componentDidMount() {
+        this.refreshHomePage();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state != prevState) {
+            this.refreshHomePage();
+        }
+    }
+    
     render() {
         return (
             <News news={this.props.news} />

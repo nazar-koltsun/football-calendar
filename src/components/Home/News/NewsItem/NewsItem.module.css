@@ -1,7 +1,6 @@
 .NewsItem {
     --gap: 15px;
     display: flex;
-    align-items: flex-start;
     gap: var(--gap);
     margin-bottom: var(--box-vert-space-big);
     padding-bottom: var(--box-vert-space);
@@ -9,10 +8,14 @@
 }
 
 .NewsItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 70%;
 }
 
 .NewsItemImg {
+    align-self: flex-start;
     width: calc(30% - var(--gap));
 }
 
