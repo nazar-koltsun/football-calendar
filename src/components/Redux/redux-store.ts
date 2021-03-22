@@ -4,18 +4,20 @@ import matchesReducer from './matches-reducer';
 import homeReducer from './home-reducer';
 import thunkMiddleware from 'redux-thunk';
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
     navigation: navReducer,
     matchesPage: matchesReducer,
     homePage: homeReducer,
 });
 
+type RootReducerType = typeof rootReducer;
+export type AppStateType = ReturnType<RootReducerType>;
+
+//@ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(
-    reducers,
+    rootReducer,
     composeEnhancers(applyMiddleware(thunkMiddleware))
 );
-
-window.store = store;
 
 export default store;
