@@ -5,7 +5,9 @@ let initState = {
     isNavOpen: false,
 };
 
-const navReducer = (state = initState, action) => {
+type InitStateType = typeof initState;
+
+const navReducer = (state = initState, action: any): InitStateType => {
     switch (action.type) {
         case OPEN_NAV:
             return {
@@ -22,7 +24,14 @@ const navReducer = (state = initState, action) => {
     }
 };
 
-export const openNav = () => ({ type: OPEN_NAV });
-export const closeNav = () => ({ type: CLOSE_NAV });
+type OpenNavType = {
+    type: typeof OPEN_NAV
+}
+export const openNav = (): OpenNavType => ({ type: OPEN_NAV });
+
+type CloseNavType = {
+    type: typeof CLOSE_NAV
+}
+export const closeNav = (): CloseNavType => ({ type: CLOSE_NAV });
 
 export default navReducer;

@@ -5,12 +5,14 @@ const SET_FILTERED_EVENTS_COUNT = 'matches/SET_FILTERED_EVENTS_COUNT';
 const TOGGLE_IS_FETCHING = 'matches/TOGGLE_IS_FETCHING';
 
 let initState = {
-    premierLeagueEvents: [],
+    premierLeagueEvents: [] as Array<any>,
     filteredEventsCount: 'last/5',
     isFetching: false,
 };
 
-const matchesReducer = (state = initState, action) => {
+type InitStateType = typeof initState;
+
+const matchesReducer = (state = initState, action: any): InitStateType => {
     switch (action.type) {
         case SET_PREMIER_LEAGUE_EVENTS: {
             return {
@@ -38,22 +40,22 @@ const matchesReducer = (state = initState, action) => {
     }
 };
 
-export const setPremierLeagueEvents = (premierLeagueEvents) => ({
+export const setPremierLeagueEvents = (premierLeagueEvents: Array<any>) => ({
     type: SET_PREMIER_LEAGUE_EVENTS,
     premierLeagueEvents,
 });
 
-export const setFilteredEventsCount = (eventsCount) => ({
+export const setFilteredEventsCount = (eventsCount: number) => ({
     type: SET_FILTERED_EVENTS_COUNT,
     eventsCount,
 });
 
-export const toggleIsFetching = (isFetching) => ({
+export const toggleIsFetching = (isFetching: boolean) => ({
     type: TOGGLE_IS_FETCHING,
     isFetching,
 });
 
-export const getMatchesData = (filteredEventsCount) => async (dispatch) => {
+export const getMatchesData = (filteredEventsCount: string) => async (dispatch: any) => {
     dispatch(toggleIsFetching(true));
     const response = await matchesApi.getMatches(filteredEventsCount);
     dispatch(setPremierLeagueEvents(response.data.api.fixtures));
