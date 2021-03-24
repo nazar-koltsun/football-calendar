@@ -4,11 +4,13 @@ const GET_NEWS = 'home/GET_NEWS';
 const TOGGLE_IS_FETCHING = 'home/TOGGLE_IS_FETCHING';
 
 let initState = {
-    news: [],
+    news: [] as Array<any>,
     isFetching: false,
 };
 
-const homeReducer = (state = initState, action) => {
+type InitStateType = typeof initState;
+
+const homeReducer = (state = initState, action: any): InitStateType => {
     switch (action.type) {
         case GET_NEWS: {
             return {
@@ -29,17 +31,26 @@ const homeReducer = (state = initState, action) => {
     }
 };
 
-export const getNews = (news) => ({
+type GetNewsType = {
+    type: typeof GET_NEWS
+    news: Array<any>
+}
+export const getNews = (news: Array<any>): GetNewsType => ({
     type: GET_NEWS,
     news,
 });
 
-export const toggleIsFetching = (isFetching) => ({
+type ToggleIsFetchingType = {
+    type: typeof TOGGLE_IS_FETCHING
+    isFetching: boolean
+}
+
+export const toggleIsFetching = (isFetching: boolean): ToggleIsFetchingType => ({
     type: TOGGLE_IS_FETCHING,
     isFetching,
 });
 
-export const getNewsData = () => async (dispatch) => {
+export const getNewsData = () => async (dispatch: any) => {
     dispatch(toggleIsFetching(true));
     const response = await newsApi.getNews();
     dispatch(getNews(response.data.arts));
