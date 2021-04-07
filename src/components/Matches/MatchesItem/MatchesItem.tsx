@@ -1,15 +1,30 @@
 import React from 'react';
 import classes from './MatchesItem.module.css';
 
-function MatchesItem(props) {
-    let detectWinnerForHomeTeam = (match) => {
-        if (match.goalsHomeTeam > match.goalsAwayTeam) {
+type HomeAwayTeamsType = {
+    id: number
+    team_name: string
+    logo: string
+}
+
+type PropsType = {
+    homeTeam: HomeAwayTeamsType
+    awayTeam: HomeAwayTeamsType
+    goalsHomeTeam: number
+    goalsAwayTeam: number
+}
+
+let MatchesItem: React.FC<PropsType> = (props) => {
+    console.log(props);
+    
+    let detectWinnerForHomeTeam = () => {
+        if (props.goalsHomeTeam > props.goalsAwayTeam) {
             return classes.winner;
         }
     };
 
-    let detectWinnerForAwayTeam = (match) => {
-        if (match.goalsAwayTeam > match.goalsHomeTeam) {
+    let detectWinnerForAwayTeam = () => {
+        if (props.goalsAwayTeam > props.goalsHomeTeam) {
             return classes.winner;
         }
     };
@@ -34,11 +49,11 @@ function MatchesItem(props) {
                 />
             </div>
             <div className={classes.result}>
-                <span className={detectWinnerForHomeTeam(props.matchItem)}>
+                <span className={detectWinnerForHomeTeam()}>
                     {props.goalsHomeTeam}
                 </span>
                 <span className={classes.resultLine}>-</span>
-                <span className={detectWinnerForAwayTeam(props.matchItem)}>
+                <span className={detectWinnerForAwayTeam()}>
                     {props.goalsAwayTeam}
                 </span>
             </div>

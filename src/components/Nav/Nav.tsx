@@ -2,8 +2,14 @@ import React from 'react';
 import classes from './Nav.module.css';
 import { NavLink } from 'react-router-dom';
 
-function Nav(props) {
-    const showLIst = props.isNavOpen ? 'show' : '';
+type PropsType = {
+    isNavOpen: boolean
+    openNav: () => void
+    closeNav: () => void
+}
+
+let Nav: React.FC<PropsType> = (props) => {
+    const showList = props.isNavOpen ? 'show' : '';
     return (
         <nav className={classes.nav}>
             {props.isNavOpen ? (
@@ -21,7 +27,7 @@ function Nav(props) {
                     onClick={() => props.openNav()}
                 ></button>
             )}
-            <ul className={`${showLIst} ${classes.list}`}>
+            <ul className={`${showList} ${classes.list}`}>
                 <li className={classes.item}>
                     <NavLink exact
                         to='/'
