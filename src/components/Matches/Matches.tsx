@@ -33,7 +33,7 @@ let Matches: React.FC<PropsType> = (props) => {
                     </select>
                 </div>
                 <ul className={classes.matchesList}>
-                    {props.events.map((item: any) => {
+                    {props.events.map((item) => {
                         return (
                             <MatchesItem
                                 key={item.fixture_id}

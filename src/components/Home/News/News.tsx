@@ -3,7 +3,17 @@ import classes from './News.module.css';
 import NewsItem from './NewsItem/NewsItem';
 import Loader from '../../common/Loader';
 
-function News(props) {
+type NewsType = {
+    id: number
+    tit: string
+    thb: string
+}
+type PropsType = {
+    isFetching: boolean
+    news: Array<NewsType>
+}
+
+let News: React.FC<PropsType> = (props) => {
     return (
         <article className={classes.News}>
             <h2 className={classes.NewsTitle}>News</h2>

@@ -1,7 +1,12 @@
 import React from 'react';
 import classes from './NewsItem.module.css';
 
-function NewsItem(props) {
+type PropsType = {
+    newsTitle: string
+    newsImg: string
+}
+
+let NewsItem: React.FC<PropsType> = (props) => {
     return (
         <article className={classes.NewsItem}>
             <div className={classes.NewsItemInfo}>
