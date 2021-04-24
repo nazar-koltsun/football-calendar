@@ -1,0 +1,11 @@
+.Pagination {
+    margin-top: 50px;
+}
+
+.PaginationItem {
+    background: green;
+}
+
+.currentPage {
+    background: red;
+}

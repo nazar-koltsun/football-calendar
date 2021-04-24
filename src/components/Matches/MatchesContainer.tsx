@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Matches from './Matches';
-import Loader from '../common/Loader';
+import Loader from '../common/Loader/Loader';
 import {
     getPremierLeagueEvents,
     getFilteredEventsCount,

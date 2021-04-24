@@ -1,10 +1,14 @@
+import { type } from 'node:os';
 import { newsApi } from '../../api/api';
 
 const GET_NEWS = 'home/GET_NEWS';
 const TOGGLE_IS_FETCHING = 'home/TOGGLE_IS_FETCHING';
+const SET_CURRENT_PAGE = 'home/SET_CURRENT_PAGE';
 
 let initState = {
     news: [] as Array<any>,
+    pageSize: 3,
+    currentPage: 1,
     isFetching: false,
 };
 
@@ -26,6 +30,13 @@ const homeReducer = (state = initState, action: any): InitStateType => {
             };
         }
 
+        case SET_CURRENT_PAGE: {
+            return {
+                ...state,
+                currentPage: action.currentPage,
+            };
+        }
+        
         default:
             return state;
     }
@@ -44,10 +55,18 @@ type ToggleIsFetchingType = {
     type: typeof TOGGLE_IS_FETCHING
     isFetching: boolean
 }
-
 export const toggleIsFetching = (isFetching: boolean): ToggleIsFetchingType => ({
     type: TOGGLE_IS_FETCHING,
     isFetching,
+});
+
+type SetCurrentPageType = {
+    type: typeof SET_CURRENT_PAGE
+    currentPage: number
+}
+export const setCurrentPage = (currentPage: number): SetCurrentPageType => ({
+    type: SET_CURRENT_PAGE,
+    currentPage,
 });
 
 export const getNewsData = () => async (dispatch: any) => {

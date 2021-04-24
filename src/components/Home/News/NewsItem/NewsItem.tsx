@@ -15,7 +15,7 @@ let NewsItem: React.FC<PropsType> = (props) => {
                     Today
                 </time>
             </div>
-            <img className={classes.NewsItemImg} src={props.newsImg} loading='lazy' alt=""/>
+            <img className={classes.NewsItemImg} src={props.newsImg} width='120' height='120' loading='lazy' alt=''/>
         </article>
     );
 }
