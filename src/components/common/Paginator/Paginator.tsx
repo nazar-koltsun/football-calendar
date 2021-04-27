@@ -36,7 +36,6 @@ let Paginator: React.FC<PropsType> = ({pageSize, currentPage, totalItemsCount, o
                         }
                     }
                 >
-                {'<'}
                 </button>
             }
 
@@ -69,7 +68,6 @@ let Paginator: React.FC<PropsType> = ({pageSize, currentPage, totalItemsCount, o
                         }
                     }
                 >
-                {'>'}
                 </button>
             }
         </div>

@@ -1,11 +1,65 @@
 .Pagination {
+    display: flex;
+    justify-content: center;
     margin-top: 50px;
 }
 
-.PaginationItem {
-    background: green;
+.PaginationItem,
+.PaginationBtn {
+    width: 32px;
+    height: 32px;
+    margin: 0 3px;
+    color: var(--main-text-color);
+    background: transparent;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.PaginationItem:hover,
+.PaginationBtn:hover {
+    background: var(--light-green2);
+    border: 1px solid var(--light-green2);
 }
 
 .currentPage {
-    background: red;
+    font-weight: 700;
+    color: var(--gray-text-color);
+    background: var(--green);
+}
+
+.PaginationLeftBtn,
+.PaginationRightBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PaginationLeftBtn::before,
+.PaginationRightBtn::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 2px solid var(--main-text-color);
+    border-right: none;
+    border-bottom: none;
+}
+
+.PaginationLeftBtn::before {
+    transform: rotate(-45deg);
+}
+
+.PaginationRightBtn::before {
+    transform: rotate(135deg);
+}
+
+.PaginationLeftBtn {
+    margin-right: 15px;
+}
+
+.PaginationRightBtn {
+    margin-left: 15px;
 }
