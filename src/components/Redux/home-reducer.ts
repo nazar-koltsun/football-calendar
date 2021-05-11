@@ -1,4 +1,3 @@
-import { type } from 'node:os';
 import { newsApi } from '../../api/api';
 
 const GET_NEWS = 'home/GET_NEWS';
